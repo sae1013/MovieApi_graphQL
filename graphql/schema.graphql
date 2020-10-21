@@ -1,0 +1,27 @@
+type Movie{
+    id: Int!
+    title: String!
+    rating:Float!
+    summary: String!
+    language: String!
+    medium_cover_image: String!
+}
+
+
+
+type Query{
+    movies(limit:Int, rating:Float): [Movie]!
+    movie(id: Int!): Movie
+}
+
+type Mutation {
+    addMovie(score: Int!, name: String!): Movie!
+    deleteMovie(id: Int!) : Boolean
+}
+
+
+
+
+
+# Query는 urlpatterns와 같음
+#resolvers가 마치 View와 같은 역할을 함.
